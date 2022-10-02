@@ -34,3 +34,52 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// Character Strings
+const charStrings = {
+  uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  lowercase: 'abcdefghijklmnopqrstuvwxyz',
+  number: '0123456789',
+  special: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
+};
+
+// Prompts and generatePassword funtion 
+function generatePassword() {
+  var passwordCharSet = "";
+
+  // Set Length
+  var length = window.prompt("How many characters would you like your password to be? Please enter a number between 8 and 128.");
+
+  // Set uppercase
+  var uppercase = window.confirm("Would you like to include uppercase letters in your password?");
+  if (uppercase) {
+    passwordCharSet += charStrings.uppercase;
+  };
+
+  // Set lowercase
+  var lowercase = window.confirm("Would you like to include lowercase letters in your password?");
+  if (lowercase) {
+    passwordCharSet += charStrings.lowercase;
+  };
+
+//Set numbers
+  var numbers = window.confirm("Would you like to include numbers in your password?");
+  if (numbers) {
+    passwordCharSet += charStrings.number;
+  };
+
+  // Set symbols
+  var symbols = window.confirm("Would you like to include special in your password?");
+  if (symbols) {
+    passwordCharSet += charStrings.special;
+  };
+
+  var password = "";
+
+  //Random fun things
+
+  for (let i = 0; i < length; i++) {
+    password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
+  }
+  return password;
+}
