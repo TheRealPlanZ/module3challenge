@@ -29,7 +29,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
@@ -43,7 +42,7 @@ const charStrings = {
   special: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
 };
 
-// Prompts and generatePassword funtion 
+// Prompts and generatePassword function 
 function generatePassword() {
   var passwordCharSet = "";
 
@@ -69,17 +68,19 @@ function generatePassword() {
   };
 
   // Set symbols
-  var symbols = window.confirm("Would you like to include special in your password?");
-  if (symbols) {
+  var special = window.confirm("Would you like to include special characters in your password?");
+  if (special) {
     passwordCharSet += charStrings.special;
   };
 
   var password = "";
 
-  //Random fun things
+  //Random fun things (Math)
 
   for (let i = 0; i < length; i++) {
     password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
   }
   return password;
 }
+
+//See if way to ensure true variety occurs
