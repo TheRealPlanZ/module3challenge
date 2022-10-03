@@ -75,7 +75,11 @@ function generatePassword() {
 
   var password = "";
 
+<<<<<<< HEAD
   //Random fun things (Math)
+=======
+  //Random fun times
+>>>>>>> 0512c429d478fcff357f306dacb5a35677182ef2
 
   for (let i = 0; i < length; i++) {
     password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
