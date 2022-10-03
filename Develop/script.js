@@ -68,18 +68,14 @@ function generatePassword() {
   };
 
   // Set symbols
-  var special = window.confirm("Would you like to include special characters in your password?");
+  var special = window.confirm("Would you like to include special in your password?");
   if (special) {
     passwordCharSet += charStrings.special;
   };
 
   var password = "";
 
-<<<<<<< HEAD
   //Random fun things (Math)
-=======
-  //Random fun times
->>>>>>> 0512c429d478fcff357f306dacb5a35677182ef2
 
   for (let i = 0; i < length; i++) {
     password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
