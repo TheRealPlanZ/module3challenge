@@ -23,6 +23,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -48,7 +49,11 @@ function generatePassword() {
 
   // Set Length
   var length = window.prompt("How many characters would you like your password to be? Please enter a number between 8 and 128.");
-
+    if (length < 8){
+    window.alert("Please select an appropriate amount of characters.");
+    document.getElementsByClassName("card-body").reset();
+    }
+    else{
   // Set uppercase
   var uppercase = window.confirm("Would you like to include uppercase letters in your password?");
   if (uppercase) {
@@ -68,12 +73,17 @@ function generatePassword() {
   };
 
   // Set symbols
-  var special = window.confirm("Would you like to include special in your password?");
+  var special = window.confirm("Would you like to include a special character in your password?");
   if (special) {
     passwordCharSet += charStrings.special;
   };
 
   var password = "";
+}
+  if(uppercase == false && lowercase == false && numbers == false && special == false) {
+    window.alert("Please select at least one option to generate a valid password.");
+    document.getElementsByClassName("card-body").reset();
+  }
 
   //Random fun things (Math)
 
